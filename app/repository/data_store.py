@@ -21,5 +21,7 @@ class ClinicaRepository:
         return None
 
     @staticmethod
+
+    # Retorna coleccion de objetos tipo Cita
     def buscar_citas_por_paciente(id_paciente: int):
         return [Cita(**c) for c in BD_CITAS if c["id_paciente"] == id_paciente]
