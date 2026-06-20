@@ -7,7 +7,7 @@ BD_PACIENTES = [
 ]
 
 BD_CITAS = [
-    {"id_cita": 101, "fecha_hora": datetime(2026, 6, 15, 10, 0), "estado": "Pendiente", "id_paciente": 1}
+    {"id_cita": 101, "fecha_hora": datetime(2026, 7, 20, 10, 0), "estado": "Pendiente", "id_paciente": 1}
 ]
 
 class ClinicaRepository:
