@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from app.controller import endpoints
 
 app = FastAPI(
-    title="Sistema de Gestión Clínica - API Backend",
+    title="Sistema de Gestión Clínica - Grupo 02",
     description="Implementación de servicios REST obligatorios para la Tarea T02.03 - Arquitectura MS-RC",
     version="1.0.0"
 )
