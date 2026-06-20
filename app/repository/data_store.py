@@ -1,7 +1,7 @@
 from app.model.entities import Paciente, Cita
 from datetime import datetime
 
-# Simulación de Base de Datos en Memoria
+# Mock de datos simulando tablas de base de datos
 BD_PACIENTES = [
     {"id_paciente": 1, "cedula": "0999999999", "nombre": "Stefanie Avila"}
 ]
