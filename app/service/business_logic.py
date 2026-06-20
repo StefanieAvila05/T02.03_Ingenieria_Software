@@ -5,6 +5,8 @@ class ClinicaService:
     @staticmethod
     def consultar_agenda_externa(cedula: str):
         # Regla de negocio / Validación primaria
+
+        # Control de longitud minima segun estandar nacional (10 digitos)
         if not cedula or len(cedula) < 10:
             return {"error": "Cédula inválida o incompleta"}
         
