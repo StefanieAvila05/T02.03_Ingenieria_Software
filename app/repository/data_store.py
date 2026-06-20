@@ -12,6 +12,8 @@ BD_CITAS = [
 
 class ClinicaRepository:
     @staticmethod
+
+    # Busqueda por clave candidata o AK
     def obtener_paciente_por_cedula(cedula: str):
         for p in BD_PACIENTES:
             if p["cedula"] == cedula:
