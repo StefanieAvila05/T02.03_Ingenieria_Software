@@ -4,13 +4,15 @@ from app.repository.data_store import ClinicaRepository
 class ClinicaService:
     @staticmethod
     def consultar_agenda_externa(cedula: str):
-        # Regla de negocio / Validación primaria
-
+        # Capa encargada de aislar las reglas operativas del negocio
+        
         # Control de longitud minima segun estandar nacional (10 digitos)
         if not cedula or len(cedula) < 10:
             return {"error": "Cédula inválida o incompleta"}
-        if not cedula.isdigit(): 
-            return {"error": "La cedula debe contener solo numeros"}
+        
+        # Validación de seguridad: restringir la entrada a caracteres numéricos puros
+        if not cedula.isdigit():
+            return {"error": "La cédula debe contener exclusivamente caracteres numéricos"}
         
         paciente = ClinicaRepository.obtener_paciente_por_cedula(cedula)
         if not paciente:
