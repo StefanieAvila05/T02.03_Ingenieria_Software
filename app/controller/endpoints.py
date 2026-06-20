@@ -1,6 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from app.service.business_logic import ClinicaService
 
+# Definicion de enrutadores publicos de la API
+
 router = APIRouter(prefix="/api/citas", tags=["Módulo Citas Externas"])
 
 @router.get("/{cedula}")
