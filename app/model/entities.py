@@ -8,6 +8,7 @@ class Paciente(BaseModel):
     cedula: str
     nombre: str
 
+# Validacion de estructura de datos
 class Cita(BaseModel):
     id_cita: int
     fecha_hora: datetime
