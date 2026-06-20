@@ -1,4 +1,7 @@
 # T02.3 - Ingeniería de Software - Grupo 05 (Desarrollo Individual)
+Nombre: Stefanie Avila J.
+Grupo:2
+Materia: Ingenieria de Software
 
 ## 1. Requerimientos Funcionales Asociados (T02.01)
 * **RF-10 (Consulta Externa de Citas):** El sistema debe permitir la consulta de citas programadas mediante el número de cédula del paciente a través de un endpoint seguro.
