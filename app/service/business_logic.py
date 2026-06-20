@@ -9,6 +9,8 @@ class ClinicaService:
         # Control de longitud minima segun estandar nacional (10 digitos)
         if not cedula or len(cedula) < 10:
             return {"error": "Cédula inválida o incompleta"}
+        if not cedula.isdigit(): 
+            return {"error": "La cedula debe contener solo numeros"}
         
         paciente = ClinicaRepository.obtener_paciente_por_cedula(cedula)
         if not paciente:
