@@ -1,5 +1,6 @@
 from app.repository.data_store import ClinicaRepository
 
+# Capa encargada de aislar las reglas operativas del negocio
 class ClinicaService:
     @staticmethod
     def consultar_agenda_externa(cedula: str):
