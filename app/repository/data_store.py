@@ -11,10 +11,22 @@ BD_CITAS = [
 ]
 
 class ClinicaRepository:
+
+    """
+    Componente de acceso a datos (Data Access Object - DAO).
+    Responsable de encapsular las operaciones de lectura y filtrado 
+    sobre el almacenamiento en memoria de las entidades Paciente y Cita.
+    """
+
     @staticmethod
 
     # Busqueda por clave candidata o AK
     def obtener_paciente_por_cedula(cedula: str):
+        """
+        Busca un registro de paciente utilizando la cédula como clave candidata.
+        Retorna una instancia de la entidad Paciente o None si no se encuentra.
+        """
+
         for p in BD_PACIENTES:
             if p["cedula"] == cedula:
                 return Paciente(**p)
@@ -24,4 +36,8 @@ class ClinicaRepository:
 
     # Retorna coleccion de objetos tipo Cita
     def buscar_citas_por_paciente(id_paciente: int):
+        """
+        Recupera la colección de citas médicas vinculadas a un ID específico de paciente.
+        Simula una consulta de clave foránea con relación Uno a Muchos (1:N).
+        """
         return [Cita(**c) for c in BD_CITAS if c["id_paciente"] == id_paciente]
