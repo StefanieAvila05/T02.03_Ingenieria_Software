@@ -12,5 +12,5 @@ class Paciente(BaseModel):
 class Cita(BaseModel):
     id_cita: int
     fecha_hora: datetime
-    estado: str  # Pendiente, Atendida, Cancelada
+    estado: str  # Valores: Pendiente, Atendida, Cancelada
     id_paciente: int
