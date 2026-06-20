@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
 
+# Entidad que representa al paciente
 class Paciente(BaseModel):
     id_paciente: int
     cedula: str
