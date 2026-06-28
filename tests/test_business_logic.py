@@ -1,6 +1,7 @@
 import pytest
 from app.service.business_logic import ClinicaService
 
+# Suite de pruebas unitarias para la capa de servicio (Logica de Negocio)
 def test_consultar_agenda_cedula_invalida_o_corta():
     """Prueba que el sistema rechace cédulas menores a 10 dígitos"""
     resultado = ClinicaService.consultar_agenda_externa("12345")
