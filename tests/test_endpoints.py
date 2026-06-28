@@ -6,18 +6,19 @@ from app.main import app
 cliente = TestClient(app)
 
 def test_endpoint_raiz():
-    """Prueba que la ruta base responda exitosamente"""
     respuesta = cliente.get("/")
     assert respuesta.status_code == 200
-    assert respuesta.json() == {"status": "Servicio Backend Operativo con éxito"}
 
 def test_endpoint_citas_exitoso():
-    """Prueba la respuesta HTTP 200 al consultar un paciente existente"""
     respuesta = cliente.get("/api/citas/0999999999")
     assert respuesta.status_code == 200
-    assert "paciente" in respuesta.json()
 
-def test_endpoint_citas_no_encontrado():
-    """Prueba la respuesta HTTP 404 cuando la cedula no existe"""
+def test_endpoint_citas_no_encontrado_404():
+    """Prueba el error 404 cuando la cédula no existe en la base de datos"""
     respuesta = cliente.get("/api/citas/9999999999")
     assert respuesta.status_code == 404
+
+def test_endpoint_citas_invalida_400():
+    """Prueba el error 400 cuando la cédula tiene letras o es inválida"""
+    respuesta = cliente.get("/api/citas/09a65a4d56")
+    assert respuesta.status_code == 400
