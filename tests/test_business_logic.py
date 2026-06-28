@@ -18,3 +18,11 @@ def test_consultar_agenda_paciente_no_registrado():
     resultado = ClinicaService.consultar_agenda_externa("9999999999")
     assert "error" in resultado
     assert "ERROR_PERSISTENCIA" in resultado["error"]
+
+def test_consultar_agenda_exitoso():
+    """Prueba el flujo correcto de consulta de un paciente existente"""
+    # Usamos la cédula mockeada que devuelve datos en el repositorio
+    resultado = ClinicaService.consultar_agenda_externa("0999999999")
+    assert "error" not in resultado
+    assert "paciente" in resultado
+    assert "citas_agendadas" in resultado
