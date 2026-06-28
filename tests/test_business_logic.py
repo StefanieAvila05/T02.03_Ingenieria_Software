@@ -12,3 +12,9 @@ def test_consultar_agenda_cedula_no_numerica():
     resultado = ClinicaService.consultar_agenda_externa("09a65a4d56")
     assert "error" in resultado
     assert "ERROR_SEGURIDAD" in resultado["error"]
+
+def test_consultar_agenda_paciente_no_registrado():
+    """Prueba el comportamiento cuando la cédula es estructuralmente válida pero no existe"""
+    resultado = ClinicaService.consultar_agenda_externa("9999999999")
+    assert "error" in resultado
+    assert "ERROR_PERSISTENCIA" in resultado["error"]
