@@ -2,6 +2,7 @@ import pytest
 from fastapi.testclient import TestClient
 from app.main import app
 
+# Suite de pruebas automatizadas para la capa de controladores (Endpoints)
 cliente = TestClient(app)
 
 def test_endpoint_raiz():
